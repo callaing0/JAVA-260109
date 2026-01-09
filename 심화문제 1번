@@ -1,0 +1,47 @@
+package OverTest;
+
+public class OverBasics01 {
+	public static void main(String[] args) {
+		
+	
+	int[] monthlySales = {1200,650,1430,800,1600,1700,900,1100,1550,1800,1300,2000};
+	
+	int totla = 0;
+	int aver = 0;
+	int max = monthlySales[0];
+	int min = monthlySales[0];
+	
+	for(int i = 0; i < monthlySales.length; i++) {
+		totla += monthlySales[i];
+		aver = totla / monthlySales.length;
+		
+		if(monthlySales[i] > max) {
+			max = monthlySales[i];
+		}
+		
+		if(monthlySales[i] < min) {
+			min = monthlySales[i];
+		}
+	}
+	
+	System.out.println("연간 총 매출 : "+totla);
+	System.out.println("월 평균 매출 : "+aver);
+	System.out.println("---------------------------------------------");	
+	
+	
+	for(int i = 0; i < monthlySales.length; i++) {
+		if(monthlySales[i] == max) {
+			System.out.println("최고 매출 월과 금액 : "+(i+1)+"월 매출금액 "+max);			
+		}
+		
+		if(monthlySales[i] == min) {
+			System.out.println("최저 매출 월과 금액 : "+(i+1)+"월 매출금액 "+min);			
+		}
+	
+		if(monthlySales[i] > aver) {
+			System.out.println("평균 이상 매출 월과 금액 : "+(i+1)+"월 매출금액 "+monthlySales[i]);		
+		}
+	}
+	
+	}
+}
